@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="GitSharp.Demo">
+</Property><Property Name="Файл решения" Value="C:\Users\Влад.vlad\Desktop\GitSharp.Demo-master\GitSharp.Demo.sln">
+</Property><Property Name="Date" Value="29 марта 2016 г.">
+</Property><Property Name="Time" Value="18:37">
+</Property></Properties><Event ErrorLevel="0" Project="GitSharp.Demo" Source="GitSharp.Demo.csproj" Description="Проект успешно преобразован">
+</Event><Event ErrorLevel="3" Project="GitSharp.Demo" Source="GitSharp.Demo.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="GitSharp.Demo.sln" Description="Преобразование решения успешно завершено">
+</Event><Event ErrorLevel="3" Project="" Source="GitSharp.Demo.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="GitSharp.Demo" Source="GitSharp.Demo.csproj" Description="Сканирование завершено: обновление для файлов проекта не требуется.">
+</Event></UpgradeLog>

@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="GitSharp.Demo.CommitView.StatusView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Demo="clr-namespace:GitSharp.Demo"
+    xmlns:Controls="clr-namespace:GitSharp.Demo.Controls"
+    MinHeight="300" MinWidth="300">
+    <DockPanel>
+        <StackPanel Orientation ="Horizontal" DockPanel.Dock="Top">
+            <Button Click="OnCommitButtonClick">Commit staged changes ...</Button>
+        </StackPanel>
+        <Demo:StatusListView x:Name="m_status_list"/>
+        <Controls:DockPanelSplitter Width="4"/>
+        <Demo:TextDiffView x:Name="m_diff_view"/>
+    </DockPanel>
+</UserControl>

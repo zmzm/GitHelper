@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="GitSharp.Demo.WorkingTreeView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Controls="clr-namespace:GitSharp.Demo.Controls"
+    xmlns:CommitView="clr-namespace:GitSharp.Demo.CommitView"
+    xmlns:Demo="clr-namespace:GitSharp.Demo"
+    Height="300" Width="300">
+    <UserControl.Resources>
+        <HierarchicalDataTemplate DataType="{x:Type CommitView:WorkingTree}" ItemsSource="{Binding Path=Children}">
+            <TextBlock Text="{Binding Name}" TextTrimming="CharacterEllipsis" ToolTip="{Binding Path}"/>
+        </HierarchicalDataTemplate>
+        <DataTemplate DataType="{x:Type CommitView:WorkingFile}">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding Name}" TextTrimming="CharacterEllipsis" Foreground="{Binding Path=Status, Converter={x:Static Demo:StatusListView.StatusToColorConverter}}" ToolTip="{Binding Path}"/>
+                <TextBlock Text=" ("/>
+                <TextBlock Text="{Binding Status}"/>
+                <TextBlock Text=")"/>
+            </StackPanel>
+        </DataTemplate>
+    </UserControl.Resources>
+    <DockPanel>
+        <!--tree-->
+        <DockPanel>
+            <Label DockPanel.Dock="Top"  Style="{StaticResource HeaderLabelStyle}">Directories</Label>
+            <TreeView Name="m_directories"/>
+        </DockPanel>
+        <!--<Controls:DockPanelSplitter Width="4"/>-->
+        <!--list-->
+        <!--<DockPanel>
+            <Label DockPanel.Dock="Top"  Style="{StaticResource HeaderLabelStyle}">Files</Label>
+            <ListView Name="m_files">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Name">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Index state">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </DockPanel>-->
+    </DockPanel>
+</UserControl>
