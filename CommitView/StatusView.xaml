@@ -6,10 +6,8 @@
     MinHeight="300" MinWidth="300">
     <DockPanel>
         <StackPanel Orientation ="Horizontal" DockPanel.Dock="Top">
-            <Button Click="OnCommitButtonClick">Commit staged changes ...</Button>
+            <Button Click="OnCommitButtonClick">Закоммитить изменения</Button>
         </StackPanel>
-        <Demo:StatusListView x:Name="m_status_list"/>
-        <Controls:DockPanelSplitter Width="4"/>
-        <Demo:TextDiffView x:Name="m_diff_view"/>
+        <Demo:StatusListView x:Name="m_status_list" Loaded="m_status_list_Loaded" />
     </DockPanel>
 </UserControl>

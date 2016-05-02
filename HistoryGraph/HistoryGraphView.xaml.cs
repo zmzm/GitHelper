@@ -12,7 +12,8 @@ namespace GitSharp.Demo.HistoryGraph
         private PlotRenderer m_plot_renderer;
         private Repository m_repo;
         private PlotWalk m_revwalk;
-        private Selection<Commit> m_selection; 
+        private Selection<Commit> m_selection;
+        private Selection<Core.Ref> m_lselection; 
 
         public HistoryGraphView()
         {
@@ -21,9 +22,12 @@ namespace GitSharp.Demo.HistoryGraph
             m_plot_renderer.Init(m_canvas);
             m_plot_renderer.CommitClicked += OnCommitClicked;
             m_plot_renderer.LabelClicked += OnLabelClicked;
-            m_selection = Selection<Commit>.ExclusiveSelection(); 
+            m_selection = Selection<Commit>.ExclusiveSelection();
+            m_lselection = Selection<Core.Ref>.ExclusiveSelection();
             m_selection.OnSelect = OnSelect;
             m_selection.OnUnselect = OnUnselect;
+            m_lselection.OnSelect = LabelSelect;
+            m_lselection.OnUnselect = LabelUnselect;
         }
 
         public void Update(Repository repo)
@@ -35,11 +39,6 @@ namespace GitSharp.Demo.HistoryGraph
             list.Source(m_revwalk);
             list.fillTo(1000);
             m_plot_renderer.Update(list);
-            //var rw = new RevWalk(repo);
-            //rw.RevSortStrategy.Add(RevSort.Strategy.COMMIT_TIME_DESC);
-            //rw.RevSortStrategy.Add(RevSort.Strategy.TOPO);
-            //rw.markStart(((Core.Repository)repo).getAllRefsByPeeledObjectId().Keys.Select(id => rw.parseCommit(id)));
-            //m_renderer.Update(rw);
         }
 
         private void OnSelect(Commit c)
@@ -52,6 +51,17 @@ namespace GitSharp.Demo.HistoryGraph
             m_plot_renderer.Unselect(c.Hash);
         }
 
+        private void LabelSelect(Core.Ref aref)
+        {
+            var a = aref.Name;
+            m_plot_renderer.LabelSelect(a);
+        }
+
+        private void LabelUnselect(Core.Ref @ref)
+        {
+            //m_plot_renderer.Unselect(c.Hash);
+        }
+
         private void OnCommitClicked(PlotCommit commit)
         {
             if (CommitClicked==null)
@@ -61,13 +71,14 @@ namespace GitSharp.Demo.HistoryGraph
             CommitClicked(c);
         }
 
-        private void OnLabelClicked(Core.Ref @ref)
+        private void OnLabelClicked(Core.Ref aref)
         {
             if (LabelClicked == null)
                 return;
-            if (@ref == null)
+            if (aref == null)
                 return;
-            LabelClicked(@ref);
+            LabelClicked(aref);
+            //m_plot_renderer.LabelSelect(aref.Name);
         }
 
         private void ScrollViewer_ScrollChanged(object sender, System.Windows.Controls.ScrollChangedEventArgs e)

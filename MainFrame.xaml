@@ -15,24 +15,16 @@
         </Menu>
         <!--status bar-->
         <DockPanel DockPanel.Dock="Bottom" LastChildFill="False" Background="LightGray">
-            <!--<Label Margin="0,0,5,0" Content="Repository:">
-                <Label.ContextMenu>
-                    <ContextMenu>
-                        <MenuItem Header="Select repository path" Click="OnSelectRepository"/>
-                    </ContextMenu>
-                </Label.ContextMenu>
-            </Label> -->
             <TextBox Visibility="Collapsed" Name="m_url_textbox" MinWidth="100">.</TextBox>
-            <!--<Button Click="OnLoadRepository" Margin="5,0,0,0">Reload</Button> -->
         </DockPanel>
         
         <TabControl Name="m_tab_control">
             <TabItem Header="Обзор">
                 <Demo:BrowserView/>
             </TabItem>
-            <!--<TabItem Header="Committing" >
+            <TabItem Header="Коммит" >
                 <CommitView:StatusView/>
-            </TabItem> -->
+            </TabItem>
         </TabControl>
     </DockPanel>
 </Window>

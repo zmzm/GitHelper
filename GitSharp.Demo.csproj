@@ -185,12 +185,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="TextDiffView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -247,9 +241,6 @@
     </Compile>
     <Compile Include="CommitView\WorkingTreeView.xaml.cs">
       <DependentUpon>WorkingTreeView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="TextDiffView.xaml.cs">
-      <DependentUpon>TextDiffView.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserSettings.cs" />
     <Compile Include="Util\GenericConverter.cs" />

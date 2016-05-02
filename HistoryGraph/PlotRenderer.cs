@@ -20,6 +20,7 @@ namespace GitSharp.Demo.HistoryGraph
 
         private Dictionary<string, TextBlock> m_texts = new Dictionary<string, TextBlock>();
         private Dictionary<string, Ellipse> m_dots = new Dictionary<string, Ellipse>();
+        private Dictionary<string, TextBlock> m_labels = new Dictionary<string, TextBlock>();
 
         private Canvas Canvas
         {
@@ -63,6 +64,7 @@ namespace GitSharp.Demo.HistoryGraph
             child.SetValue(Canvas.TopProperty, (double)y - TEXT_OFFSET + VerticalOffset);
             child.PreviewMouseDown += OnLabelClick;
             Canvas.Children.Add(child);
+            m_labels[child.Text] = child;
             return 102;
         }
 
@@ -152,6 +154,13 @@ namespace GitSharp.Demo.HistoryGraph
                 return;
             m_dots[hash].Fill = Brushes.Silver;
             m_texts[hash].Background = Brushes.Silver;
+        }
+
+        internal void LabelSelect(string name)
+        {
+            if (!m_labels.ContainsKey(name))
+                return;
+            m_texts[name].Background = Brushes.Green;
         }
 
         internal void Unselect(string hash)

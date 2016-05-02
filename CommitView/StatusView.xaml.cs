@@ -45,7 +45,7 @@ namespace GitSharp.Demo.CommitView
 					b = Encoding.ASCII.GetBytes("Binary content\nFile size: " + blob.RawData.Length);
 				else
 					b = blob.RawData;
-			m_diff_view.Init(new Diff(a, b));
+			//m_diff_view.Init(new Diff(a, b));
 		}
 
 		public Repository Repository
@@ -58,5 +58,10 @@ namespace GitSharp.Demo.CommitView
 		{
 			m_status_list.StartCommitDialog();
 		}
+
+        private void m_status_list_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
 	}
 }

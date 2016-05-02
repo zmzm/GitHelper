@@ -66,11 +66,11 @@
                     <Button Name="commit" Width="60">Коммит</Button>
                     
                     <Button Name="merge" Width="60">Слияние</Button>
-                    <Button Name="switch" Width="100">Переключиться</Button>
+                    <Button Name="switch" Width="100" Click="CheckoutBranch">Переключиться</Button>
                     <Button Name="delete" Width="100" Click="DeleteBranch">Удалить ветку</Button>
                     
                 </DockPanel>
-                <Label Margin="360,-90,0,0" Name="selected_branch" Height="30" Width="217"></Label>
+                <Label Margin="290,-90,0,0" Name="selected_branch" Height="30" Width="295"></Label>
 
             </DockPanel>
         </DockPanel>

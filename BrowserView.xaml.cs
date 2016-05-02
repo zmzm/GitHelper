@@ -76,8 +76,19 @@ namespace GitSharp.Demo
                 selected_branch.Content = String.Empty;
                 Update(Repository);
             }
-            /*b.Delete();
-            Update(Repository);*/
+        }
+        private void CheckoutBranch(object sender, RoutedEventArgs e)
+        {
+            if (selectedLabel.Equals("") || selectedLabel.Equals("HEAD"))
+            {
+                MessageBox.Show("Выберите ветку!!!");
+            }
+            else
+            {
+                Branch b = new Branch(Repository, selectedLabel);
+                b.Checkout();
+                MessageBox.Show("Вы переключились на ветку " + b.Name);
+            }
         }
 
 		#region IRepositoryView Members
