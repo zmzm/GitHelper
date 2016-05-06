@@ -64,7 +64,7 @@ namespace GitSharp.Demo.HistoryGraph
             child.SetValue(Canvas.TopProperty, (double)y - TEXT_OFFSET + VerticalOffset);
             child.PreviewMouseDown += OnLabelClick;
             Canvas.Children.Add(child);
-            m_labels[child.Text] = child;
+            m_labels[@ref.ObjectId.Name] = child;
             return 102;
         }
 

@@ -27,18 +27,9 @@
                     <ColumnDefinition Width="2"/>
                     <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
-
-                <!--<GridSplitter ResizeBehavior="PreviousAndNext" Width="2" Grid.Column="1"/>
-
-                <DockPanel  Grid.Column="2">
-                    <Label DockPanel.Dock="Top"  Name="m_object_title" Style="{StaticResource HeaderLabelStyle}">Blob contents of selected tree node</Label>
-                    <RichTextBox Name="m_object" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"/>
-                </DockPanel> -->
-
             </Grid>
 
         </DockPanel>
-        <!-- <Controls:DockPanelSplitter DockPanel.Dock="Left" Width="4" BorderThickness="1"/> -->
 
         <DockPanel DockPanel.Dock="Top">
             <DockPanel DockPanel.Dock="Top">
@@ -48,30 +39,21 @@
                     <Demo:CommitSummaryView x:Name="m_commit_view"/>
                 </DockPanel>
                 <Controls:DockPanelSplitter DockPanel.Dock="Top"  Height="4"/>
-
-                <!--<DockPanel DockPanel.Dock="Top">
-                    <Label DockPanel.Dock="Top"  Name="m_commit_title"  Style="{StaticResource HeaderLabelStyle}">Changes by this commit (select a modification to view the diff)</Label>
-                    <Demo:CommitDiffView x:Name="m_commit_diff" DockPanel.Dock="Top"  />
-                    <Controls:DockPanelSplitter DockPanel.Dock="Top"  Height="4"/>
-                    <Label DockPanel.Dock="Top"   Style="{StaticResource HeaderLabelStyle}">Differences</Label>
-                    <Demo:TextDiffView x:Name="m_text_diff" DockPanel.Dock="Top"  />
-                </DockPanel> -->
                 <DockPanel DockPanel.Dock="Top" Height="60">
-                    <Label DockPanel.Dock="Top"  Name="buttons" Style="{StaticResource HeaderLabelStyle}">Кнопки</Label>
-                    
+                    <Label DockPanel.Dock="Top"  Name="buttons" Style="{StaticResource HeaderLabelStyle}">Кнопки</Label>                   
                     <TextBox Name="branch_name" MinWidth="80"></TextBox>
                     <Button Name="create" Width="50" Click="CreateBranch">Создать ветку</Button>
-                    
-                    <TextBox Name="commit_message" Width="145"></TextBox>
-                    <Button Name="commit" Width="60">Коммит</Button>
-                    
-                    <Button Name="merge" Width="60">Слияние</Button>
                     <Button Name="switch" Width="100" Click="CheckoutBranch">Переключиться</Button>
                     <Button Name="delete" Width="100" Click="DeleteBranch">Удалить ветку</Button>
-                    
                 </DockPanel>
-                <Label Margin="290,-90,0,0" Name="selected_branch" Height="30" Width="295"></Label>
-
+                <DockPanel DockPanel.Dock="Bottom" Height="30">
+                    <TextBox Name="branch_one" MinWidth="80" Height="30" Width="120" Text="Первая ветка.."></TextBox>
+                    <TextBox Name="branch_two" MinWidth="80" Height="30" Width="120" Text="Вторая ветка.."></TextBox>
+                    <Button Name="merge" Click="MergeBranches" Width="80">Слияние</Button>
+                </DockPanel>
+                <DockPanel DockPanel.Dock="Bottom" Height="30">
+                        <Label Margin="50px 0 0 0" Name="selected_branch" Height="30" Width="200"></Label>
+                </DockPanel>
             </DockPanel>
         </DockPanel>
     </DockPanel>

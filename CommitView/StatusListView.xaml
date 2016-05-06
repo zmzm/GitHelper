@@ -27,39 +27,9 @@
                     <ContextMenu>
                         <MenuItem Header="Stage" Click="OnStage" />
                         <MenuItem Header="Unstage" Click="OnUnstage" />
-                        <MenuItem Header="Checkout staged (Modified --> Staged)" Click="OnCheckoutIndex" />
-                        <MenuItem Header="Checkout" Click="OnCheckout" />
-                        <MenuItem Header="Remove from index" Click="OnRemove" />
-                        <MenuItem Header="Delete from index and directory" Click="OnDelete" />
-                        <MenuItem Header="Commit staged changes" Click="OnCommitIndex" />
                     </ContextMenu>
                 </ListView.ContextMenu>
             </ListView>
         </DockPanel>
-        <!--<Controls:DockPanelSplitter Width="4"/>-->
-        <!--list-->
-        <!--<DockPanel>
-            <Label DockPanel.Dock="Top"  Style="{StaticResource HeaderLabelStyle}">Files</Label>
-            <ListView Name="m_files">
-                <ListView.View>
-                    <GridView>
-                        <GridViewColumn Header="Name">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding}"/>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
-                        <GridViewColumn Header="Index state">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding}"/>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
-                    </GridView>
-                </ListView.View>
-            </ListView>
-        </DockPanel>-->
     </DockPanel>
 </UserControl>

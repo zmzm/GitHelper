@@ -4,7 +4,6 @@
     Title="Repository configuration" Height="300" Width="400">
     <Grid>
 
-        <!--config-->
         <Grid.RowDefinitions>
             <RowDefinition Height="55*" />
             <RowDefinition Height="227*" />
@@ -16,7 +15,6 @@
             <Button Click="OnSaveConfiguration">Save</Button>
        </StackPanel>
 
-        <!--config tree-->
         <DockPanel Grid.Row="2">
             <ListView Name="configurationList" DockPanel.Dock="Top">
                 <ListView.View>

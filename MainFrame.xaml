@@ -16,6 +16,7 @@
         <!--status bar-->
         <DockPanel DockPanel.Dock="Bottom" LastChildFill="False" Background="LightGray">
             <TextBox Visibility="Collapsed" Name="m_url_textbox" MinWidth="100">.</TextBox>
+            <Button Click="OnLoadRepository" Margin="5,0,0,0">Обновить</Button>
         </DockPanel>
         
         <TabControl Name="m_tab_control">
